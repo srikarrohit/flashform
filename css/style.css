@@ -1,0 +1,200 @@
+body{
+	background-color: #E9ECEE;
+}
+#topmenubar{
+	position: absolute;
+	top: 2%;
+	left: 5%;
+	height: 14%;
+	width: 28%;
+	padding-top:1%;
+	padding-left: 1.5%;
+	margin-top: 0.5%;
+	-webkit-box-shadow:-1px 1px 5px 0.5px grey;
+	background-color: white;
+	border-radius: 0.2em;
+}
+#catselect{
+	width: auto;
+	margin-right: 0.1%;
+}
+
+#cattitle{
+	position: relative;
+	margin-left: 0.3%;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+.button{
+	font-size: 0.95em;
+	text-align: center;
+	vertical-align: middle;
+}
+#cat{
+	height: 18%;
+	width: 46%;
+	margin-left: 0.5%;
+	margin-right: 5%;
+	padding-left: 0.08%;
+	padding-right: 0.8%;
+	margin-top:4%;
+}
+.browse{
+	width: 22%;
+	height: 16%;
+	margin-top: 4%;
+}
+
+#subcatselect{
+	display: none;
+	position: absolute;
+	left: 5%;
+	top: 10em;
+	background-color: white;
+	height: 14%;
+	width: 28%;
+	padding-top:1%;
+	padding-left: 1.5%;
+	margin-top: 0.5%;
+	-webkit-box-shadow:-1px 1px 5px 0.5px grey;
+}
+#subcattitle{
+	position: relative;
+	margin-left: 0.3%;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+#subcat{
+	height: 1.5em;
+	width: 32%;
+	margin-left: 0.5em;
+	margin-right: 2em;
+	padding-left: 0.1em;
+	padding-right: 0.5em;
+	margin-top: 4.8%;
+}
+
+#submit{
+	margin-top: 3.3%;
+	width: 20%;
+}
+#description{
+	display:none;
+	position: absolute;
+	top: 3%;
+	left: 38%;
+	height: 26em;
+	width: 50%;
+	-webkit-box-shadow:-1px 1px 5px 0.5px grey;
+	background-color: white;
+	border-radius: 0.2em;
+}
+#destitlename{
+	position: relative;
+	top: 1em;
+	left: 5%;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+#destitle{
+	position: relative;
+	top: 1.5em;
+	left: 5%;
+	width: 85%;
+	height: 1.2em;
+	font-size: 1.2em;
+	vertical-align: middle;
+	padding-left: 1%;
+	
+}
+#desname{
+	position: relative;
+	top: 2.6em;
+	left: 5%;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+#descriptiontext{
+	position: relative;
+	top: 4.5em;
+	left: 5%;
+	height: 15em;
+	width: 87%;
+	padding: 0.5em;
+}
+#laterform{
+	display:none;
+	position: absolute;
+	left: 38%;
+	top: 72%;
+	background-color: white;
+	padding-left:1.5%;
+	height: 23em;
+	width: 48.5%;
+	border-radius: 0.2em;
+	margin-bottom: 2%;
+	-webkit-box-shadow:-1px 1px 5px 0.5px grey;
+}
+
+#tabletitle{
+	position: relative;
+	top: 2em;
+	left: 4%;
+	font-size: 1.2em;
+	font-weight: bold;
+	padding: 0.4em;
+}
+#formforsports{
+	position: relative;
+	top: 4em;
+	left: 4%;
+}
+
+#formforsports tr td{
+	padding: 0.2em;
+}
+.textfields{
+	padding-left: 0.3em;
+	width: 150%;
+}
+#subcatsubmit{
+	position: relative;
+	left: 60%;
+	top: 6em;
+	width: 15%;
+}
+#prodtype{
+	display: none;
+	position: absolute;
+	top: 20em;
+	left: 5%;
+	height: 14%;
+	width: 28%;
+	background-color: white;
+	padding-top:1%;
+	padding-left: 1.5%;
+	margin-top: 0.5%;
+	-webkit-box-shadow:-1px 1px 5px 0.5px grey;
+
+}
+.titlename{
+	position: relative;
+	top: 0.5em;
+	left: 0%;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+#subcateg{
+	position: relative;
+	top: 1.5em;
+	left: 0%;
+	width: 50%;
+}
+#imagetitle{
+	position: relative;
+	top: 2%;
+	left: 2%;
+	font-weight: bold;
+	font-size: 1.2em;
+	
+}
