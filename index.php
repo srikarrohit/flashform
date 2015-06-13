@@ -106,6 +106,9 @@
 	</head>
 
 	<body>
+		<div class="top-navbar">
+			<a href="#"><img src="images/flash.png" id="logo"></a>
+		</div>
 
 		<div id="topmenubar">
 			<div id="catselect">
