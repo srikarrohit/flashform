@@ -40,4 +40,20 @@ $(document).ready(function(){
 		});
 	})  */
 
+/* jquery for login page*/
+	$("#signup").click(function(){
+		$("#top-navbar").css({"opacity":"0.5"});
+		$("#logindiv,#signup").delay(500).css({"display":"none","opacity":"0.8"});
+		$("#request").slideDown(500);
+	});
+	
+	$("#close").click(function(){
+		$("#logindiv").css({"display":"block"});
+		$("#request").slideUp(500,function(){
+			$("#signup").css({"display":"block","opacity":"1"});
+			$("#logindiv").css({"opacity":"1"});
+		});
+		$("#top-navbar").css({"opacity":"1"});
+		
+	})	
 })
