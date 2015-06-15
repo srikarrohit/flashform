@@ -1,107 +1,24 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-		<script src="jquery/jquery-1.11.3.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="jquery/alljquery.js"></script>
-
-		<script>
-		
-		function ajax_get_cat(){
-		    var cat = document.getElementById("cat");
-		    var hr = new XMLHttpRequest();
-		    hr.open("GET", "cat.json", true);
-		    hr.setRequestHeader("Content-type", "application/json", true);
-		    hr.onreadystatechange = function() {
-			    if(hr.readyState == 4 && hr.status == 200) {
-				    var data = JSON.parse(hr.responseText);
-					cat.innerHTML = "";
-					for( var obj in data)
-					{
-						for(var i=0; i< data[obj].length;i++)
-						{
-							cat.innerHTML += "<option value="+data[obj][i].id+"> "+ data[obj][i].Category +"</option>";
-						}
-					}	
-			    }
-		    }
-		    hr.send(null);
-		    cat.innerHTML = "requesting...";
-		}
-		function getsubcat(){
-		    var subcat = document.getElementById("subcat");
-		    var ev = document.getElementById("cat");
-		    document.getElementById("subcattitle").style.visibility="visible"
-		    var cat_id = ev.options[ev.selectedIndex].value;
-		var x=0;
-		    var hr = new XMLHttpRequest();
-		    hr.open("GET", "subcat.json", true);
-		    hr.setRequestHeader("Content-type", "application/json", true);
-		    hr.onreadystatechange = function() {
-			    if(hr.readyState == 4 && hr.status == 200) {
-				    var data = JSON.parse(hr.responseText);
-					subcat.innerHTML ="" ;
-					subcat.style.visibility="visible";
-					submit=document.getElementById("submit");
-					submit.style.visibility="visible";
-					for( var obj in data)
-					{
-						for(var i=0; i< data[obj].length;i++)
-						{
-							x=data[obj][i].catid;
-							y=data[obj][i].Sport;
-							if(x == cat_id)
-								{
-									subcat.innerHTML += "<option value="+y+" id="+y+"> "+ data[obj][i].Sport +"</option>";
-								}
-						}
-					}	
-			    }
-		    }
-		    hr.send(null);
-		    subcat.innerHTML = "requesting...";
-		}
-		function getdata(){
-		    document.getElementById("laterform").style.visibility="visible";
-		    var ev = document.getElementById("subcat");
-		    var subname = ev.options[ev.selectedIndex].value;
-		    var x=0;
-		    var subcat = document.getElementById("subcateg");
-		    var hr = new XMLHttpRequest();
-		    hr.open("GET", "subcat.json", true);
-		    hr.setRequestHeader("Content-type", "application/json", true);
-		    hr.onreadystatechange = function() {
-			    if(hr.readyState == 4 && hr.status == 200) {
-				    var data = JSON.parse(hr.responseText);
-					subcat.innerHTML ="" ;
-					for( var obj in data)
-					{
-						for(var i=0; i< data[obj].length;i++)
-						{
-							x=data[obj][i].Sport;
-							subname = subname.replace(/\s+/g, '');
-							if(!x.localeCompare(subname))
-								{
-									for(var j=0 ; j<data[obj][i].Items.length ; j++)
-									{
-										x=data[obj][i].Items[j];
-										console.log(typeof(x));
-										subcat.innerHTML += "<option>" + x +"</option>";
-									}
-								}
-						}
-					}	
-			    }
-		    }
-		    hr.send(null);
-		    subcat.innerHTML = "requesting...";
-		}
-		</script>
-
-
-		
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">  
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+			<script type="text/javascript" src="js/alljquery.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<!--	<link rel="stylesheet" type="text/css" href="css/summernote.css">-->
+		<script type="text/javascript" src="js/ajax.js"></script> 
+	<!--	<script type="text/javascript" src="js/summernote.min.js"></script> -->
+		<script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.min.js"></script> 
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />  
+<link href="summernote.css" rel="stylesheet">
+<script src="summernote.min.js"></script> 
 
 	</head>
 
@@ -140,7 +57,8 @@
 					<span id="destitlename">Title</span><br>
 					<input type="text" id="destitle" placeholder="Title of the Product">
 					<span id="desname">Description</span>
-					<textarea id="descriptiontext" placeholder="Enter the description here"></textarea>				
+					<!--<textarea id="descriptiontext" placeholder="Enter the description here"></textarea>-->
+					<div id='descriptiontext'></div>
 				</div>
 
 				<div id="laterform">
@@ -185,7 +103,11 @@
 
 	</body>
 	
-	
+	<script type="text/javascript">
+    		$(document).ready(function() {
+  			$('#descriptiontext').summernote();
+			});
+  		</script>
 		
 </html>
 

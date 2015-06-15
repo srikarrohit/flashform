@@ -371,3 +371,10 @@ input{
 	font-weight: bolder;
 	color: #5171d9;
 }
+.note-editor{
+	  position: relative!important;
+  top: 20%!important;
+  width: 85%!important;
+  margin-left: 5%!important;
+  height: 62%!important;
+}
