@@ -1,7 +1,7 @@
 	function ajax_get_cat(){
 		    var cat = document.getElementById("cat");
 		    var hr = new XMLHttpRequest();
-		    hr.open("GET", "js/cat.json", true);
+		    hr.open("GET", "phpfetch.php", true);
 		    hr.setRequestHeader("Content-type", "application/json", true);
 		    hr.onreadystatechange = function() {
 			    if(hr.readyState == 4 && hr.status == 200) {
@@ -26,7 +26,7 @@
 		    var cat_id = ev.options[ev.selectedIndex].value;
 		var x=0;
 		    var hr = new XMLHttpRequest();
-		    hr.open("GET", "js/subcat.json", true);
+		    hr.open("GET", "phpfetchsubcat.php", true);
 		    hr.setRequestHeader("Content-type", "application/json", true);
 		    hr.onreadystatechange = function() {
 			    if(hr.readyState == 4 && hr.status == 200) {
@@ -59,7 +59,7 @@
 		    var x=0;
 		    var subcat = document.getElementById("subcateg");
 		    var hr = new XMLHttpRequest();
-		    hr.open("GET", "js/subcat.json", true);
+		    hr.open("GET", "phpfetchsubcat.php", true);
 		    hr.setRequestHeader("Content-type", "application/json", true);
 		    hr.onreadystatechange = function() {
 			    if(hr.readyState == 4 && hr.status == 200) {
