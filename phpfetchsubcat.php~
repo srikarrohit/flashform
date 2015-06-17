@@ -15,7 +15,7 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if($rs["Items"]!="")
     $outp .= '"Items":'. $rs["Items"]     . '}';
     else
-    $outp .= '"Items":'. '""' . '}';
+    $outp .= '"Items":'. "" . '}';
 }
 $outp ='{"Subcats":['.$outp.']}';
 $conn->close();
