@@ -13,7 +13,7 @@
 	<!--	<link rel="stylesheet" type="text/css" href="css/summernote.css">-->
 		<script type="text/javascript" src="js/ajax.js"></script> 
 	<!--	<script type="text/javascript" src="js/summernote.min.js"></script> -->
-		<script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.min.js"></script> 
+	<!--	<script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.min.js"></script> -->
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
 <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />  
