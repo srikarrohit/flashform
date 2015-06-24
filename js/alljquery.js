@@ -1,7 +1,7 @@
-
 $(document).ready(function(){
 	var i=1;
 	var j=1;
+	
 	$("#subcatselect").on('change','select',function(){
 		if(j==1){
 
@@ -11,14 +11,17 @@ $(document).ready(function(){
 		$('#description').delay(500).toggle("slide",{direction:'left'},400);
 		$("#prodtype").slideUp(400);
 		i=1;
+
 		}
 	});
 	$("#submit").click(function(){
-		$("#prodtype").slideDown(400);
+		$("#prodtype").slideDown(200);
 		j++;		
 		if(i==1){
-			$('#description').toggle("slide",{direction:'left'},400);
-			$("#laterform").delay(500).slideToggle(500);
+			$('#description').delay(400).toggle("slide",{direction:'left'},400,function(){
+
+			});	
+			$("#laterform").delay(800).slideToggle(400);
 			i++;
 		}
 		else{
@@ -27,9 +30,29 @@ $(document).ready(function(){
 
 	});
 
+	$("#glyphy-pos-div1").click(function(){
+		$('body').fadeOut(500,function(){
+			window.location.href="http://www.flashfetch.in";
+		});
+	});
+
+	$("#glyphy-pos-div2").click(function(){
+		$("#profile").css({"display":"block"});
+		$("#profile").animate({left:'0%'},800,function(){
+			$("#profile").animate({zIndex:'10'},800);
+		});
+	});
+
 	$("#catsubmit").click(function(){
 		$("#subcatselect").slideDown(500);
-	})
+	});
+
+	
+	$('#personinfo').flowtype({
+		minFont: 1,
+		maxFont: 15
+	});
+
 
 	/*
 	$('#prodtype').on('change','select', function(){
@@ -55,5 +78,5 @@ $(document).ready(function(){
 		});
 		$("#top-navbar").css({"opacity":"1"});
 		
-	})	
+	})
 })
