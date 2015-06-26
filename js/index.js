@@ -1,0 +1,21 @@
+var main=function(){
+	$('.menu1').click(function(){
+        $('.side1').animate({left:"0px"},200);
+        $('.jumbotron').animate({left:"250px"},200);
+    });
+    $('.close1').click(function(){
+        $('.side1').animate({left:"-250px"},200);
+        $('.jumbotron').animate({left:"0px"},200);
+    });
+    $('.menu2').click(function(){
+        $('.side2').animate({right:"0px"},200);
+        $('.jumbotron').animate({left:"-250px"},200);
+        $('.calender').show(200);
+    });
+    $('.close2').click(function(){
+        $('.side2').animate({right:"-250px"},200);
+        $('.jumbotron').animate({left:"0px"},200);
+        $('.calender').hide(200);
+    });
+};
+$(document).ready(main);
