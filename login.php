@@ -16,21 +16,21 @@
 	</div>
 	<div id="logindiv">
 		<h2>LOGIN</h2>
-		<form name="loginform" method="post" onsubmit="return validateForm()" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
+		<form name="loginform" method="post" onsubmit="return validateForm()" action="loggedin.php">
 		<table cellpadding="5px" cellspacing="6px">
 
 			<tr>
 				<td class="col1" >Username/Email *</td>
 				<td class="col2">:</td>
-				<td><input type="text" required="true" name="name" class="inputfied"></td>
+				<td><input type="text" name="name" class="inputfied"></td>
 			</tr>
-
+<tr><td><div id="n_error"></div></td></tr>
 			<tr>
 				<td class="col1">Password *</td>
 				<td class="col2">:</td>
-				<td><input type="password" required="true" name="pass" class="inputfied"></td>
+				<td><input type="password" name="pass" class="inputfied"></td>
 			</tr>
-			
+<tr><td><div id="pass_error"></div></td></tr>	
 			<tr>
 				<td colspan="3"><input type="submit" value="Login" class="login"></td>
 			</tr>

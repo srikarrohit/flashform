@@ -8,15 +8,13 @@ $shop=$_POST["shop"];
 $email=$_POST["email"];  
 $add=$_POST["address"];  
 $phone=$_POST["phone"];  
-$conn0 = new mysqli($server, $user, $pass, $db);
-if ($conn0->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-
-$sql = "SELECT * FROM newloginform WHERE email='{$email}'";
-$result = $conn0->query($sql);
-if ($result->num_rows == 0) {
-$conn0->close();
+$conn0=new PDO("mysql:host=$server;dbname=$db", $user, $pass);
+$conn0->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$stmt0 = $conn0->prepare( "SELECT * FROM newloginform WHERE email = :email");
+$stmt0->bindParam(':email', $email);
+$stmt0->execute();
+$result = $stmt0->fetch();
+if (empty($result)) {
 try	{
 	$conn=new PDO("mysql:host=$server;dbname=$db", $user, $pass);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -79,6 +77,7 @@ else
 echo "email taken";
 }
 $conn=null;
+$conn0=null;
 	function generatePassword($length = 8) {
     $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     $count = mb_strlen($chars);

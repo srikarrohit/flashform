@@ -1,3 +1,59 @@
+function validateForm(){
+var name = document.forms["loginform"]["name"].value;
+var pass = document.forms["loginform"]["pass"].value;
+var n_error=pass_error="";
+var count=0;
+if(name === "")
+{
+//	alert(2);
+	count++;
+	n_error="Name cannot be empty";
+	document.getElementById('n_error').innerHTML = n_error;
+}
+else if( name.match(/[\.0-9a-zA-Z\s]+/gi) != name )
+{
+	count++;
+	n_error="Only letters,numbers,spaces and dots are allowed";
+	document.getElementById('n_error').innerHTML = n_error;
+}
+else
+{
+	n_error="";
+	document.getElementById('n_error').innerHTML = n_error;
+}
+if(pass === "")
+{
+//	alert(2);
+	count++;
+	pass_error="Password cannot be empty";
+	document.getElementById('pass_error').innerHTML = pass_error;
+}
+else if( pass.match(/[\.0-9a-zA-Z\s]+/gi) != pass )
+{
+	count++;
+	pass_error="Only letters,numbers,spaces and dots are allowed";
+	document.getElementById('pass_error').innerHTML = pass_error;
+}
+else if( pass.length!=8 )
+{
+	count++;
+	pass_error="Password is of 8 characters in length";
+	document.getElementById('pass_error').innerHTML = pass_error;
+}
+else
+{
+	pass_error="";
+	document.getElementById('pass_error').innerHTML = pass_error;
+}
+if(count!=0)
+{
+	return false;
+}
+else
+{
+	return true;
+}
+}
 function valnewlogin(){
 //alert(1);
 var name = document.forms["newlogin"]["name"].value;
