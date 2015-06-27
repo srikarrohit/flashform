@@ -7,40 +7,81 @@ $(document).ready(function(){
 
 		}
 		else{
-		$("#laterform").slideToggle(400);
-		$('#description').delay(500).toggle("slide",{direction:'left'},400);
-		$("#prodtype").slideUp(400);
+		$("#laterform").slideToggle(300,function(){
+			$('#description').delay(500).toggle("slide",{direction:'down'},200,function(){
+				$("#prodtype").slideUp(400);
+			});
+		});
+		
 		i=1;
+		j=1;
 
 		}
 	});
 	$("#submit").click(function(){
-		$("#prodtype").slideDown(200);
-		j++;		
+		$("#prodtype").slideDown(200,function(){
 		if(i==1){
-			$('#description').delay(400).toggle("slide",{direction:'left'},400,function(){
-
-			});	
-			$("#laterform").delay(800).slideToggle(400);
+			
+			$("#description").toggle("slide",{direction:'down'},200,function(){
+				$("#laterform").delay(700).slideToggle(400);
+			});
 			i++;
 		}
 		else{
-			i++;
+			
 		}
+
+		});
+		j++;		
+
 
 	});
 
 	$("#glyphy-pos-div1").click(function(){
-		$('body').fadeOut(500,function(){
-			window.location.href="http://www.flashfetch.in";
+		$("#glyphy-pos-div1").addClass("arrow");
+		$("#glyphy-pos-div2").removeClass("arrow");
+		$("#glyphy-pos-div3").removeClass("arrow");
+		$("#profile").animate({left:'100%'},800,function(){
+			$("#profile").animate({zIndex:'0'},800);
+			var dis1=$("#description").css("display");
+			if(dis1=="block"){
+				$("#laterform").css({"display":"block"});
+				$("#profile").delay(500).css({"display":"none"});
+			}
+
+			else
+			{
+				$("#profile").css({"display":"none"});
+			}
 		});
+		
 	});
 
 	$("#glyphy-pos-div2").click(function(){
-		$("#profile").css({"display":"block"});
-		$("#profile").animate({left:'0%'},800,function(){
-			$("#profile").animate({zIndex:'10'},800);
-		});
+		$("#glyphy-pos-div2").addClass("arrow");
+		$("#glyphy-pos-div1").removeClass("arrow");
+		$("#glyphy-pos-div3").removeClass("arrow");
+		dis=$("#laterform").css("display");
+		if(dis== "none"){
+			$("#profile").css({"display":"block"});
+			$("#profile").animate({left:'0%'},800,function(){
+				$("#profile").animate({zIndex:'10'},800);
+				$("#laterform").css({"display":"none"});
+			});
+		}
+		else{
+			$("#profile").css({"top":"-142%","display":"block"});
+			$("#profile").animate({left:'0%'},800,function(){
+				$("#profile").animate({zIndex:'10'},800);
+				$("#laterform").css({"display":"none"});
+			});
+		}
+	});
+
+	$("#glyphy-pos-div3").click(function(){
+		$("#glyphy-pos-div1").removeClass("arrow");
+		$("#glyphy-pos-div2").removeClass("arrow");
+		$("#glyphy-pos-div3").addClass("arrow");
 	});
 
 	$("#catsubmit").click(function(){
@@ -48,9 +89,9 @@ $(document).ready(function(){
 	});
 
 	
-	$('#personinfo').flowtype({
+	$('').flowtype({
 		minFont: 1,
-		maxFont: 15
+		maxFont: 24,
 	});
 
 
@@ -63,7 +104,11 @@ $(document).ready(function(){
 		});
 	})  */
 
+
+
 /* jquery for login page*/
+
+
 	$("#signup").click(function(){
 		$("#top-navbar").css({"opacity":"0.5"});
 		$("#logindiv,#signup").delay(500).css({"display":"none","opacity":"0.8"});

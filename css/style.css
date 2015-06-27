@@ -3,12 +3,14 @@ body{
 	height: 590px;
 	margin: 0px;
 	width: 1349px;
+	overflow-x: hidden !important;
 }
+
 .top-navbar{
 	background-color: rgb(52, 152, 219);
 	height: 8.5%;
-	width:100%;
-	margin: 0;
+	width:101.25%;
+	margin: 0 !important;
 }
 .gly{
 	float: left;
@@ -25,6 +27,31 @@ body{
 	width: 3.5%;
 	height: 8%;
 	z-index: 15;
+}
+.arrow:after{
+	content: "";
+	position: absolute;
+	top: 42%;
+	right: -7px;
+	border-style: solid;
+	border-width: 0 7px 7px 0;
+	border-color: white transparent;
+	display: block;
+	width: 0;
+	z-index: 1;
+}
+.arrow:before{
+	content: "";
+	position: absolute;
+	top: 42%;
+	right: -4px;
+	border-style: solid;
+	border-width: 0 7px 7px 0;
+	border-color: white transparent;
+	display: block;
+	width: 0;
+	z-index: 0;
+	-webkit-transform:rotate(45deg);
 }
 #glyphy-pos-div2{
 	background:rgb(52,159,219);
@@ -163,6 +190,7 @@ body{
 	padding-top: 0px;
 	padding-left: 2% !important;
 	padding-right: 2%;
+
 }
 #prodtype{
 	display: none;
@@ -197,15 +225,15 @@ body{
 	padding-left: 4px !important;
 }
 .form{
-	height: 100%;
+	height: 50%;
 }
 #description{
 	display:none;
-	position: absolute;
-	top: 13.25%;
+	position: relative;
+	top: -170.25%;
 	left: 36%;
-	height: 62%;
-	width: 56%;
+	height: 150%;
+	width: 58%;
 	-webkit-box-shadow:-1px 1px 5px 0.5px rgb(52, 152, 219);
 	background-color: white;
 	border-radius: 4px;
@@ -255,16 +283,16 @@ body{
 }
 #laterform{
 	display:none;
-	position: absolute;
+	position: relative;
 	left: 36%;
-	top: 81%;
+	top: -158%;
 	background-color: white;
 	padding-left:2.5%;
-	height: 62%;
-	width: 56%;
+	height: 150%;
+	width: 58%;
 	border-radius: 4px	;
-	margin-bottom: 2%;
-	-webkit-box-shadow:-1px 1px 5px 0.5px rgb(52, 152, 219);
+	margin-bottom: 6%;
+	-webkit-box-shadow:0px -1px 10px 0.5px rgb(52, 152, 219);
 }
 
 #tabletitle{
@@ -279,10 +307,9 @@ body{
 	position: relative;
 	top: 4em;
 	left: 4%;
-	border-collapse: separate;
 	border-spacing: 5px;
-	height: auto;
-	width: auto;
+	height: 69%;
+	width: 80%;
 
 }
 #formsports tr {
@@ -314,9 +341,20 @@ body{
 	font-size: 1.2em;
 	
 }
-@media only screen and (max-width: 1050px){
-	body{
-		font-size:0.8em; 
+
+#bot-nav{
+	position: fixed;
+	bottom: 0%;
+	left: 0%;
+	width: 100%;
+	height: 8%;
+	color: white;
+	z-index: 20;
+	background-color: rgb(52,109,255);
+}
+
+@media only screen and (max-width: 360px){
+*{
 	}
 }
 
@@ -327,22 +365,21 @@ body{
  */
 
 #profile{
-	position: absolute;
+	position: relative;
 	left: 100%;
-	top: 7.75%;
+	top: -102.25%;
 	background-color: white;
-	content: "123456789";
 	height:100%;
 	width: 100%;
 	z-index: 1;
-	display: block;
+	display: none;
 	border-radius: 10px;
 }
 #personinfo{
 	position: relative;
-	top: 6%;
-	left: 8%;
-	height: 36%;
+	top: 8%;
+	left: 10%;
+	height: 42%;
 	width: 45%;
 	-webkit-box-shadow: 0px 0px 15px 2px rgb(52,159,219);
 	border-radius: 8px;
@@ -373,6 +410,17 @@ body{
 .glyphys{
 	padding-right: 1% !important;
 }
+#maps{
+	height: 61%;
+	width: 38%;
+	position: relative;
+	left: 59%;
+	top: -35%;
+	border-radius: 5px;
+
+}
+
+
 /*
 ///////////////////////////////////////////////
 //////// Style for seller Login page /////////

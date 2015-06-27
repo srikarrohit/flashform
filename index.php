@@ -11,6 +11,7 @@
 		<script type="text/javascript" src="js/alljquery.js"></script>
 	 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/googlemapsapi.js"></script>
 	<!--	<link rel="stylesheet" type="text/css" href="css/index.css"> -->
 	<!--	<link rel="stylesheet" type="text/css" href="css/summernote.css">-->
 		<script type="text/javascript" src="js/ajax.js"></script> 
@@ -30,7 +31,7 @@
 			<a href="#"><img src="images/flash.png" id="logo"></a>
 		</div>
 
-		<div id="glyphy-pos-div1" class="glyphicons" title="Home Page">
+		<div id="glyphy-pos-div1" class="glyphicons arrow" title="Home Page">
 			<span class="glyphicon glyphicon-home gly" aria-hidden="true" ></span>
 		</div>
 		
@@ -117,7 +118,9 @@
 
 			</div>
 	
-			<div id="profile" class="layer two">
+			
+		</form>
+		<div id="profile">
 
 				<div id="personinfo" style="word-wrap:break-word">
 					<h3>Krishna Chaitanya</h3>
@@ -130,8 +133,14 @@
 					</ul>
 				</div>
 
+				<div id="maps">
+					
+				</div>
+
 			</div>
-		</form>
+		<div id="bot-nav">
+			<h3>KRISHNA</h3>
+		</div>
 		
 
 		<script>ajax_get_cat();</script>
@@ -142,7 +151,40 @@
     		$(document).ready(function() {
   			$('#descriptiontext').summernote();
 			});
-  		</script>
+  	</script>
+
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js"></script>
+	<script type="text/javascript">
+	var mycenter=new google.maps.LatLng(15.899025,80.467389)
+	function initialize(){
+	var mapProp={
+		center:new google.maps.LatLng(15.899025,80.467389),
+		zoom:8,
+		mapTypeId:google.maps.MapTypeId.ROADMAP
+	};
+	var map=new google.maps.Map(document.getElementById("maps"),mapProp);
+	var marker=new google.maps.Marker({
+		position:mycenter,
+		icon:'images/icon.png '
+	});
+	marker.setMap(map);
+
+	var infowindow=new google.maps.InfoWindow({
+		content:"<img src='images/image.jpg'>"
+	})
+	google.maps.event.addListener(marker,'click',function(){
+		map.setZoom(16);
+		map.setCenter(marker.getPosition());
+		infowindow.open(map,marker);
+	})
+	
+
+	}
+	
+	google.maps.event.addDomListener(window,'load',initialize);
+
+	</script>
+	
 		
 </html>
 
