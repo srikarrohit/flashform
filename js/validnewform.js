@@ -62,7 +62,7 @@ if(email === "")
 	email_error="Email id cannot be empty";
 	document.getElementById('email_error').innerHTML = email_error;
 }
-else if( email.match(/[\.0-9a-zA-Z]{6,30}@[a-zA-Z0-9]+\.[a-zA-Z]+/gi) != email )
+else if( email.match(/[\.0-9a-zA-Z]{1,30}@[a-zA-Z0-9]+\.[a-zA-Z]+/gi) != email )
 {
 	count++;
 	email_error="Email id is invalid";
