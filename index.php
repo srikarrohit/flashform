@@ -133,13 +133,17 @@
 					</ul>
 				</div>
 
-				<div id="maps">
-					
+				<div id="maps" alt="google">
+					Google Maps
 				</div>
 
 			</div>
 		<div id="bot-nav">
-			<h3>KRISHNA</h3>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Contact Us</a></li>
+				<li><a href="#">Main Site</a></li>
+			</ul>
 		</div>
 		
 
@@ -163,24 +167,9 @@
 		mapTypeId:google.maps.MapTypeId.ROADMAP
 	};
 	var map=new google.maps.Map(document.getElementById("maps"),mapProp);
-	var marker=new google.maps.Marker({
-		position:mycenter,
-		icon:'images/icon.png '
-	});
-	marker.setMap(map);
-
-	var infowindow=new google.maps.InfoWindow({
-		content:"<img src='images/image.jpg'>"
-	})
-	google.maps.event.addListener(marker,'click',function(){
-		map.setZoom(16);
-		map.setCenter(marker.getPosition());
-		infowindow.open(map,marker);
-	})
 	
 
 	}
-	
 	google.maps.event.addDomListener(window,'load',initialize);
 
 	</script>

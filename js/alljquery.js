@@ -1,7 +1,11 @@
 $(document).ready(function(){
-	var i=1;
-	var j=1;
+	var i=1;	/* variable linked to opening of description box and form */
+	var j=1;	/* variable linked to opening of description box and form by changing the select option */
+
 	
+	/* On Change event of subcategory*/
+
+
 	$("#subcatselect").on('change','select',function(){
 		if(j==1){
 
@@ -18,6 +22,11 @@ $(document).ready(function(){
 
 		}
 	});
+
+
+	/* Transitions after submitting category */
+
+
 	$("#submit").click(function(){
 		$("#prodtype").slideDown(200,function(){
 		if(i==1){
@@ -36,6 +45,10 @@ $(document).ready(function(){
 
 
 	});
+
+
+	/* HOME button Transition */
+
 
 	$("#glyphy-pos-div1").click(function(){
 		$("#glyphy-pos-div1").addClass("arrow");
@@ -56,6 +69,10 @@ $(document).ready(function(){
 		});
 		
 	});
+
+
+	/* Profile Page Transition */
+
 
 	$("#glyphy-pos-div2").click(function(){
 		$("#glyphy-pos-div2").addClass("arrow");
@@ -78,6 +95,10 @@ $(document).ready(function(){
 		}
 	});
 
+
+	/* List of products page */
+
+
 	$("#glyphy-pos-div3").click(function(){
 		$("#glyphy-pos-div1").removeClass("arrow");
 		$("#glyphy-pos-div2").removeClass("arrow");
@@ -88,32 +109,35 @@ $(document).ready(function(){
 		$("#subcatselect").slideDown(500);
 	});
 
-	
+
+
+	/* Fontsize-resize with width of the element */
+
 	$('').flowtype({
 		minFont: 1,
 		maxFont: 24,
 	});
 
 
-	/*
-	$('#prodtype').on('change','select', function(){
-		$('#description').toggle("slide",{direction:'left'},400);
-		$("#laterform").delay(500).slideToggle(500,function(){
-			$('#description').toggle("slide",{direction:'left'},400);
-			$("#laterform").delay(500).slideToggle(500);
-		});
-	})  */
+/*
+ 	*********************************************
+ 	*********************************************
+ 	************ jquery for login page **********
+	*********************************************
+	*********************************************
+ */
 
 
-
-/* jquery for login page*/
-
+	
+	/* Signup popup transition */
 
 	$("#signup").click(function(){
 		$("#top-navbar").css({"opacity":"0.5"});
 		$("#logindiv,#signup").delay(500).css({"display":"none","opacity":"0.8"});
 		$("#request").slideDown(500);
 	});
+	
+	/* Signup popup close transition */
 	
 	$("#close").click(function(){
 		$("#logindiv").css({"display":"block"});
