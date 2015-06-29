@@ -25,9 +25,10 @@ try	{
     $stmt->bindParam(':email', $email);
 		$stmt->bindParam(':add', $add); 
 		$stmt->bindParam(':phone', $phone); 
-		$stmt1 = $conn->prepare("INSERT INTO confirmedform (username,password) 
-		VALUES (:user,:pass)");
+		$stmt1 = $conn->prepare("INSERT INTO confirmedform (username,email,password) 
+		VALUES (:user,:email,:pass)");
     $stmt1->bindParam(':user', $name);
+		$stmt1->bindParam(':email', $email);
 		$password=generatePassword();
     $stmt1->bindParam(':pass', $password);
      $stmt1->execute();

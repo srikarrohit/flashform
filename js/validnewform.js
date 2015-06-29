@@ -7,13 +7,7 @@ if(name === "")
 {
 //	alert(2);
 	count++;
-	n_error="Name cannot be empty";
-	document.getElementById('n_error').innerHTML = n_error;
-}
-else if( name.match(/[\.0-9a-zA-Z\s]+/gi) != name )
-{
-	count++;
-	n_error="Only letters,numbers,spaces and dots are allowed";
+	n_error="Name/Email cannot be empty";
 	document.getElementById('n_error').innerHTML = n_error;
 }
 else
