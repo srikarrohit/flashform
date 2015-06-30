@@ -1,7 +1,7 @@
 <?php
 $server="localhost";
 $user="root";
-$pass="ragasree";
+$pass="krish";
 $db="locmart";
 $pwd=$_POST["pass"];
 $conn=new PDO("mysql:host=$server;dbname=$db", $user, $pass);

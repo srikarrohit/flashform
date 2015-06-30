@@ -113,10 +113,7 @@ $(document).ready(function(){
 
 	/* Fontsize-resize with width of the element */
 
-	$('').flowtype({
-		minFont: 1,
-		maxFont: 24,
-	});
+
 
 
 /*

@@ -515,16 +515,19 @@ body{
 #signup{
 	float: right;
 	margin-right: 4%;
-	margin-top: 1%;
-	font-size: 1.5em;
+	margin-top: 1.2%;
+	font-size: 1.2em;
 	color: white;
-	padding: 6px;
+	padding-top: 6px;
 	height: 44%;
-	width: 10.5%;
+	width: 9.5%;
+	text-align: center;
 	border-radius: 5px;
 	background-color: rgb(52, 152, 219);
 	color: white;
 	border:1px solid white;
+	-webkit-transition: background-color 0.1s ease-in;
+	transition: background-color 0.1s ease-in;
 }
 
 #signup:hover{
@@ -541,7 +544,7 @@ body{
 	background-color: white;
 	border-radius: 5%;
 	width: 32%;
-	height: 34%;
+	height: 37%;
 	padding: 2%;
 	margin-right:0%;
 	-webkit-box-shadow:2px -2px 7px 0.25px rgb(52, 152, 219);
@@ -577,19 +580,22 @@ input{
 
 .login{
 	float: right;
-	margin-top: 4%;
+	margin-top: 0%;
 	background-color: rgb(52, 152, 219);
 	color: white !important;
 	height: 2em;
-	width: 30%;
-	border-radius: 50%;
+	width: 27%;
+	border-radius: 8%;
 	font-weight:bold;
 	font-family: helvectia;
 	font-size: 1em; 
 	text-align: center;
 	border: 1px solid rgb(52, 152, 219);
+	-webkit-transition: background-color 0.1s ease-in;
+	transition: background-color 0.1s ease-in;
 }
 .login:hover{
+	cursor: pointer;
 	background-color: white;
 	color: rgb(52, 152, 219) !important;
 	-webkit-box-shadow: 4px -4px 10px 0px rgb(52, 152, 219);
@@ -634,7 +640,7 @@ input{
 	font-family: algerian;
 	left: 0%;
 	border-bottom: 1.75px solid rgb(52, 152, 219);
-	width: 11.5%;
+	width: 14%;
 	padding-bottom: 0.25%;
 }
 #request table{
