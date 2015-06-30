@@ -2,7 +2,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-$conn = new mysqli("localhost", "root", "krish", "flashform");
+$conn = new mysqli("localhost", "root", "ragasree", "flashform");
 
 $result = $conn->query("SELECT * FROM subcat");
 
@@ -15,7 +15,7 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if($rs["Items"]!="")
     $outp .= '"Items":'. $rs["Items"]     . '}';
     else
-    $outp .= '"Items":'. '""' . '}';
+    $outp .= '"Items":'. "" . '}';
 }
 $outp ='{"Subcats":['.$outp.']}';
 $conn->close();
