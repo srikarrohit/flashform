@@ -1,7 +1,0 @@
-Problems in the present site:
-{"Please write "Done" at the end of the problem once it is solved or introduce the problem if there is any other problem"}
-
-1. The table for the form is not responsive.
-2. The transitions sucks at an issue 	-	"Done" 
-3. Need to vary textsize with browser width.
-4.
