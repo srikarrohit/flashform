@@ -2,7 +2,46 @@ $(document).ready(function(){
 	var i=1;	/* variable linked to opening of description box and form */
 	var j=1;	/* variable linked to opening of description box and form by changing the select option */
 
+
+
+	/* Transitions after submitting Category */
+
+	$("#catsubmit").click(function(){
+		$("#subcatselect").slideDown(500);
+		$("#profile").css({"top":"-122.5%"})
+	});
+
+
 	
+
+	/* Transitions after submitting subcategory */
+
+
+	$("#submit").click(function(){
+		$("#profile").css({"top":"-185%"})
+		$("#prodtype").slideDown(200,function(){
+			$("#imageupload").slideDown(200,function(){
+				if(i==1){
+				
+				$("#description").toggle("slide",{direction:'down'},200,function(){
+					$("#laterform").delay(400).slideToggle(400);
+				});
+				i++;
+				}
+				else{
+				
+				}
+
+				});
+				j++;		
+
+	});
+		
+
+	});
+
+
+
 	/* On Change event of subcategory*/
 
 
@@ -11,9 +50,13 @@ $(document).ready(function(){
 
 		}
 		else{
-		$("#laterform").slideToggle(300,function(){
-			$('#description').delay(500).toggle("slide",{direction:'down'},200,function(){
-				$("#prodtype").slideUp(400);
+		$("#laterform").slideToggle(100,function(){
+			$('#description').delay(300).toggle("slide",{direction:'down'},100,function(){
+				$("#imageupload").slideUp(100,function(){
+					$("#prodtype").slideUp(100);
+					$("#profile").css({"top":"-122.25%"})
+				});
+				
 			});
 		});
 		
@@ -24,27 +67,7 @@ $(document).ready(function(){
 	});
 
 
-	/* Transitions after submitting category */
 
-
-	$("#submit").click(function(){
-		$("#prodtype").slideDown(200,function(){
-		if(i==1){
-			
-			$("#description").toggle("slide",{direction:'down'},200,function(){
-				$("#laterform").delay(700).slideToggle(400);
-			});
-			i++;
-		}
-		else{
-			
-		}
-
-		});
-		j++;		
-
-
-	});
 
 
 	/* HOME button Transition */
@@ -54,8 +77,8 @@ $(document).ready(function(){
 		$("#glyphy-pos-div1").addClass("arrow");
 		$("#glyphy-pos-div2").removeClass("arrow");
 		$("#glyphy-pos-div3").removeClass("arrow");
-		$("#profile").animate({left:'100%'},800,function(){
-			$("#profile").animate({zIndex:'0'},800);
+		$("#profile").animate({left:'100%'},500,function(){
+			$("#profile").animate({zIndex:'0'},500);
 			var dis1=$("#description").css("display");
 			if(dis1=="block"){
 				$("#laterform").css({"display":"block"});
@@ -81,15 +104,15 @@ $(document).ready(function(){
 		dis=$("#laterform").css("display");
 		if(dis== "none"){
 			$("#profile").css({"display":"block"});
-			$("#profile").animate({left:'0%'},800,function(){
-				$("#profile").animate({zIndex:'10'},800);
+			$("#profile").animate({left:'0%'},500,function(){
+				$("#profile").animate({zIndex:'10'},500);
 				$("#laterform").css({"display":"none"});
 			});
 		}
 		else{
-			$("#profile").css({"top":"-142%","display":"block"});
-			$("#profile").animate({left:'0%'},800,function(){
-				$("#profile").animate({zIndex:'10'},800);
+			$("#profile").css({"display":"block"});
+			$("#profile").animate({left:'0%'},500,function(){
+				$("#profile").animate({zIndex:'10'},500);
 				$("#laterform").css({"display":"none"});
 			});
 		}
@@ -105,9 +128,69 @@ $(document).ready(function(){
 		$("#glyphy-pos-div3").addClass("arrow");
 	});
 
-	$("#catsubmit").click(function(){
-		$("#subcatselect").slideDown(500);
+
+
+
+
+	/* Adding and removing new image upload option and displaying the image */
+
+
+	var input=$("#inputs");
+	var imageshow=$('#imagedisplay ul')
+	var k=3;
+	$("#plus").click(function(){
+		if(k<6){
+			$('<div id="new"><input type="file" name="image'+i+'" class="images" onchange="readURL(this,'+k+')"><span id="rem" class="remove glyphicon glyphicon-remove-sign"></span></div>').appendTo(input);
+			$('<li><img id ="i'+k+'" src="#"></li>').appendTo(imageshow);
+			k++;
+		}
+		else{
+			alert("Maximum of 5 images can be uploaded");
+		}
+
+
+		if(k==4){
+			$("#description").css({"top":"-265.25%"});
+			$("#laterform").css({"top":"-253%"})
+			$("#profile").css({"top":"-190%"})
+		}
+		else if(k==5){
+			$("#description").css({"top":"-274.25%"});
+			$("#laterform").css({"top":"-262%"})
+			$("#profile").css({"top":"-194%"})
+		}
+		else if(k==6){
+			$("#description").css({"top":"-284.25%"});
+			$("#laterform").css({"top":"-272%"})
+			$("#profile").css({"top":"-199%"})
+		}
 	});
+
+	$(document).on('click','.remove',function(){
+		$(this).parent().remove();
+		k--;
+		var nam ='#imagedisplay ul li:eq('+(k-1)+')'
+		$(nam).remove();
+
+		if(k==3){
+			$("#description").css({"top":"-256.25%"});
+			$("#laterform").css({"top":"-245%"})
+			$("#profile").css({"top":"-185%"})
+		}
+		else if(k==4){
+			$("#description").css({"top":"-265.25%"});
+			$("#laterform").css({"top":"-253%"})
+			$("#profile").css({"top":"-190%"})
+		}
+		else if(k==5){
+			$("#description").css({"top":"-274.25%"});
+			$("#laterform").css({"top":"-262%"})
+			$("#profile").css({"top":"-194%"})
+		}
+	});
+
+
+	
 
 
 
@@ -146,3 +229,17 @@ $(document).ready(function(){
 		
 	})
 })
+
+
+function readURL(input,a) {
+		if(input.files && input.files[0]){
+			var reader=new FileReader();
+
+			reader.onload = function(e) {
+				var imgpos='#i'+a;
+				$(imgpos)
+				.attr('src',e.target.result)
+			};
+			reader.readAsDataURL(input.files[0]);
+		}
+	}

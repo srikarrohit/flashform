@@ -1,7 +1,7 @@
 <?php
 $server="localhost";
 $user="root";
-$pass="ragasree";
+$pass="krish";
 $db="locmart";
 $name=$_POST["name"];
 $shop=$_POST["shop"];  
