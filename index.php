@@ -69,11 +69,10 @@
 						
 			</select>
 		</div>
-		
 
 		<div id="imageupload">
 		
-			<span id="head">Upload Images *</spam>
+			<span id="head">Upload Images *</span>
 			<div id="inputs">
 				<input type="file" name="image1" class="images" onchange="readURL(this,1)">
 				<input type="file" name="image2" class="images" onchange="readURL(this,2)">
@@ -89,7 +88,6 @@
 
 			</div>
 		</div>
-
 
 
 

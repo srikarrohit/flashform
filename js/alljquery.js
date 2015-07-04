@@ -66,10 +66,6 @@ $(document).ready(function(){
 		}
 	});
 
-
-
-
-
 	/* HOME button Transition */
 
 
@@ -192,6 +188,41 @@ $(document).ready(function(){
 
 	
 
+
+
+	/* Adding new image upload option */
+
+
+	var input=$("#inputs");
+	var k=3;
+	$("#plus").click(function(){
+		if(k<6){
+			$('<div id="new"><input type="file" name="image'+i+'" class="images"><span id="rem" class="remove glyphicon glyphicon-remove-sign"></span></div>').appendTo(input);
+			k++;
+		}
+		else{
+			alert("Maximum of 5 images can be uploaded");
+		}
+
+
+		if(k==4){
+			$("#description").css({"top":"-225.25%"});
+			$("#laterform").css({"top":"-213%"})
+		}
+		else if(k==5){
+			$("#description").css({"top":"-234.25%"});
+			$("#laterform").css({"top":"-222%"})
+		}
+		else if(k==6){
+			$("#description").css({"top":"-244.25%"});
+			$("#laterform").css({"top":"-232%"})
+		}
+	});
+
+	$(document).on('click','.remove',function(){
+		$(this).parent().remove();
+		k--;
+	});
 
 
 	/* Fontsize-resize with width of the element */

@@ -278,6 +278,7 @@ body{
 .remove:hover{
 	cursor: pointer;
 }
+<<<<<<< HEAD
 #imagedisplay{
 	position: relative;
 	top: 1%;
@@ -311,11 +312,6 @@ body{
 	height: 100%;
 	width: 100%;
 }
-
-
-
-
-
 .form{
 	height: 50%;
 }
