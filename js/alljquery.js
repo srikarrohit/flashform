@@ -29,20 +29,23 @@ $(document).ready(function(){
 
 	$("#submit").click(function(){
 		$("#prodtype").slideDown(200,function(){
-		if(i==1){
-			
-			$("#description").toggle("slide",{direction:'down'},200,function(){
-				$("#laterform").delay(700).slideToggle(400);
-			});
-			i++;
-		}
-		else{
-			
-		}
+			$("#imageupload").slideDown(200,function(){
+				if(i==1){
+				
+				$("#description").toggle("slide",{direction:'down'},200,function(){
+					$("#laterform").delay(700).slideToggle(400);
+				});
+				i++;
+				}
+				else{
+				
+				}
 
-		});
-		j++;		
+				});
+				j++;		
 
+	});
+		
 
 	});
 
@@ -54,8 +57,8 @@ $(document).ready(function(){
 		$("#glyphy-pos-div1").addClass("arrow");
 		$("#glyphy-pos-div2").removeClass("arrow");
 		$("#glyphy-pos-div3").removeClass("arrow");
-		$("#profile").animate({left:'100%'},800,function(){
-			$("#profile").animate({zIndex:'0'},800);
+		$("#profile").animate({left:'100%'},500,function(){
+			$("#profile").animate({zIndex:'0'},500);
 			var dis1=$("#description").css("display");
 			if(dis1=="block"){
 				$("#laterform").css({"display":"block"});
@@ -81,15 +84,15 @@ $(document).ready(function(){
 		dis=$("#laterform").css("display");
 		if(dis== "none"){
 			$("#profile").css({"display":"block"});
-			$("#profile").animate({left:'0%'},800,function(){
-				$("#profile").animate({zIndex:'10'},800);
+			$("#profile").animate({left:'0%'},500,function(){
+				$("#profile").animate({zIndex:'10'},500);
 				$("#laterform").css({"display":"none"});
 			});
 		}
 		else{
 			$("#profile").css({"top":"-142%","display":"block"});
-			$("#profile").animate({left:'0%'},800,function(){
-				$("#profile").animate({zIndex:'10'},800);
+			$("#profile").animate({left:'0%'},500,function(){
+				$("#profile").animate({zIndex:'10'},500);
 				$("#laterform").css({"display":"none"});
 			});
 		}
@@ -109,6 +112,41 @@ $(document).ready(function(){
 		$("#subcatselect").slideDown(500);
 	});
 
+
+
+	/* Adding new image upload option */
+
+
+	var input=$("#inputs");
+	var k=3;
+	$("#plus").click(function(){
+		if(k<6){
+			$('<div id="new"><input type="file" name="image'+i+'" class="images"><span id="rem" class="remove glyphicon glyphicon-remove-sign"></span></div>').appendTo(input);
+			k++;
+		}
+		else{
+			alert("Maximum of 5 images can be uploaded");
+		}
+
+
+		if(k==4){
+			$("#description").css({"top":"-225.25%"});
+			$("#laterform").css({"top":"-213%"})
+		}
+		else if(k==5){
+			$("#description").css({"top":"-234.25%"});
+			$("#laterform").css({"top":"-222%"})
+		}
+		else if(k==6){
+			$("#description").css({"top":"-244.25%"});
+			$("#laterform").css({"top":"-232%"})
+		}
+	});
+
+	$(document).on('click','.remove',function(){
+		$(this).parent().remove();
+		k--;
+	});
 
 
 	/* Fontsize-resize with width of the element */

@@ -11,7 +11,6 @@
 		<script type="text/javascript" src="js/alljquery.js"></script>
 	 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
-		<script type="text/javascript" src="js/googlemapsapi.js"></script>
 	<!--	<link rel="stylesheet" type="text/css" href="css/index.css"> -->
 	<!--	<link rel="stylesheet" type="text/css" href="css/summernote.css">-->
 		<script type="text/javascript" src="js/ajax.js"></script> 
@@ -69,7 +68,14 @@
 						
 			</select>
 		</div>
-		
+		<div id="imageupload">
+			<span id="head">Upload Images *</spam>
+			<div id="inputs">
+				<input type="file" name="image1" class="images">
+				<input type="file" name="image2" class="images">
+			</div>
+			<span class="glyphicon glyphicon-plus-sign" id="plus"></span>
+		</div>
 		<form method="post" action="success.php" class="form">
 			
 			<div id="description">
